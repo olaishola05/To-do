@@ -83,6 +83,7 @@ body {
 
 input[type='checkbox'] {
   margin-right: 15px;
+  transform: scale(1.3);
 }
 
 input[type='text']:focus {
