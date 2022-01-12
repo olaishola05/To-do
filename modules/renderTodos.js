@@ -22,10 +22,10 @@ const displayUI = () => {
                 <p>Today's To Do</p>
                 <i class="fas fa-sync"></i>
               </div>
-              <div class="input-todo">
+              <form class="input-todo">
                 <input type="text" name="add-todo" id="add-todo" placeholder="Add to your list..." />
-                <button class='form-btn' tabindex='0'><i class="fas fa-level-down-alt rotate add"></i></button>
-              </div>
+                <button type='submit' class='form-btn' tabindex='0'><i class="fas fa-level-down-alt rotate add"></i></button>
+              </form>
               <div class="conditional">
                 <ul class="todos">
                 ${renderTodos()}
