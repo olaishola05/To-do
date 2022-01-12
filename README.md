@@ -2,7 +2,7 @@
 
 # A Todo App
 
-![Todos](../todo/asset/resource/todos.png)
+![Todos](./asset/resource/todos.png)
 
 A web application for managing daily tasks to be completed with functionality to add, remove and edit tasks using a minimalistic design.
 
