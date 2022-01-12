@@ -50,6 +50,11 @@ body {
   font-family: var(--font);
 }
 
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .todo-container {
   width: 60%;
   margin: 50px auto;
@@ -71,21 +76,36 @@ body {
 
 .input-todo {
   padding-left: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--gray);
 }
 
 .input-todo input {
   border: none;
-  width: 96.8%;
+  width: 100%;
   padding: 18px 0 18px 10px;
   font-size: 16px;
-  border-bottom: 1px solid var(--gray);
   font-style: italic;
 }
 
+button {
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  height: 20px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:focus {
+  margin-right: 5px;
+}
+
 .rotate {
-  position: absolute;
   transform: rotate(90deg);
-  top: 120px;
 }
 
 input[type='checkbox'] {

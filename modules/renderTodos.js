@@ -24,7 +24,7 @@ const displayUI = () => {
               </div>
               <div class="input-todo">
                 <input type="text" name="add-todo" id="add-todo" placeholder="Add to your list..." />
-                <i class="fas fa-level-down-alt rotate add"></i>
+                <button class='form-btn' tabindex='0'><i class="fas fa-level-down-alt rotate add"></i></button>
               </div>
               <div class="conditional">
                 <ul class="todos">
