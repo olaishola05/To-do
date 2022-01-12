@@ -74,11 +74,17 @@ body {
 
 .input-todo input {
   border: none;
-  width: 100%;
+  width: 96.8%;
   padding: 18px 0 18px 10px;
   font-size: 16px;
   border-bottom: 1px solid var(--gray);
   font-style: italic;
+}
+
+.rotate {
+  position: absolute;
+  transform: rotate(90deg);
+  top: 120px;
 }
 
 input[type='checkbox'] {
@@ -90,13 +96,17 @@ input[type='text']:focus {
   outline: none;
 }
 
+i {
+  color: gray;
+}
+
 .todos {
   width: 100%;
 }
 
 .todos li {
   border-bottom: 1px solid var(--gray);
-  padding: 15px 0 15px 0;
+  padding: 15px 15px 15px 0;
   display: flex;
   justify-content: space-between;
   font-size: 18px;
@@ -106,6 +116,13 @@ li div {
   display: flex;
   align-items: center;
   padding-left: 15px;
+}
+
+.msg {
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  color: red;
 }
 
 .clear {
