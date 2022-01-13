@@ -1,6 +1,6 @@
 export default class Storage {
   static storeData(todos) {
-    localStorage.setItem('books', JSON.stringify(todos));
+    localStorage.setItem('todos', JSON.stringify(todos));
   }
 
   static getData() {

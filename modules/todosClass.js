@@ -1,23 +1,29 @@
-import Storage from './storage';
+import Storage from './storage.js';
+import todoUI from './todos.js';
+import { displayUI, refreshUI, renderTodos } from './renderTodos.js';
 
 export default class Todos {
-  constructor(id = null, description = null, complete = false) {
-    this.id = id;
+  constructor(description, id, completed) {
     this.description = description;
-    this.complete = complete;
+    this.id = id;
+    this.completed = completed;
   }
 
-  setBooks(todo, id) {
-    this.todos = Storage.getData('todos');
-    todo = new Todos(todo, complete, id);
-    this.todos.unshift(todo);
-    Storage.storeData(this.todos);
-  }
+  static setTodos = (description, completed = false) => {
+    const todos = Storage.getData();
+    const id = todos.length + 1;
+    todos.push({
+      description,
+      completed,
+      id,
+    });
+    Storage.storeData(todos);
+  };
 
-  static removeBook(bookId) {
-    this.todos = Storage.getData('todos');
-    this.todos = this.todos.filter((todo) => todo.id !== bookId);
-    Storage.storeData(this.todos);
-    renderBooks();
-  }
+  // static removeTodo(todoId) {
+  //   this.todos = Storage.getData('todos');
+  //   this.todos = this.todos.filter((todo) => todo.id !== todoId);
+  //   Storage.storeData(this.todos);
+  //   displayUI();
+  // }
 }

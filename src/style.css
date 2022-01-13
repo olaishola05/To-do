@@ -63,6 +63,11 @@ h1 {
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
+.todos {
+  max-height: 300px;
+  overflow-x: auto;
+}
+
 .caption {
   display: flex;
   justify-content: space-between;
@@ -131,6 +136,10 @@ i {
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+}
+
+span {
+  padding: 5px;
 }
 
 li div {
