@@ -64,6 +64,7 @@ h1 {
 }
 
 .todos {
+  width: 100%;
   max-height: 300px;
   overflow-x: auto;
 }
@@ -126,8 +127,8 @@ i {
   color: gray;
 }
 
-.todos {
-  width: 100%;
+.trash {
+  display: none;
 }
 
 .todos li {

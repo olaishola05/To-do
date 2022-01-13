@@ -1,8 +1,8 @@
 import _ from 'lodash';
+import Storage from '../modules/storage.js';
 import './style.css';
 import todoUI from '../modules/todos.js';
 import Todos from '../modules/todosClass.js';
-import { displayUI, refreshUI } from '../modules/renderTodos.js';
 
 if (JSON.parse(localStorage.getItem('todos')) === null) {
   localStorage.setItem('todos', JSON.stringify([]));
@@ -27,25 +27,34 @@ const addTodo = () => {
     input.value = '';
   }
 };
+const elipse = document.querySelectorAll('.dots');
+const trash = document.querySelectorAll('.trash');
+const span = document.querySelectorAll('span');
+const listsContainer = document.querySelector('.todos');
 
-const formBtn = document.querySelector('.form-btn');
-formBtn.addEventListener('click', addTodo);
-
-// const liSpan = document.querySelectorAll('li > div > span');
-// for (let i = 0; i < liSpan.length; i = +1) {
-//   liSpan[i].addEventListener('click', () => {
-//     liSpan[i].contenteditable = 'true';
+// for (let i = 0; elipse.length; i += 1) {
+//   elipse[i].addEventListener('click', (e) => {
+//     e.target.display = 'none';
+//     elipse[i].style.display = 'none';
+//     trash[i].style.display = 'block';
+//     // span[i].contenteditable = true;
+//     if (e.target.contenteditable === false) {
+//       e.target.contenteditable = true;
+//     }
 //   });
 // }
 
-// const checks = document.querySelectorAll("input[type='checkbox']");
+listsContainer.addEventListener('click', (e) => {
+  const storedData = Storage.getData();
+  // console.log(storedData);
+  if (e.target.tagName === 'SPAN') {
+    e.target.setAttribute('contenteditable', true);
+    const UpdateDescription = e.target.textContent;
+    // Todos.setTodos(UpdateDescription);
+  }
+});
 
-// checks.forEach((check) => {
-//   const span = document.querySelectorAll('span');
-//   if (check.checked === true) {
-//     const baby = check.lastChild.textContent.value;
-//     console.log(baby);
-//   }
-// });
+const formBtn = document.querySelector('.form-btn');
+formBtn.addEventListener('click', addTodo);
 
 document.body.appendChild(component());

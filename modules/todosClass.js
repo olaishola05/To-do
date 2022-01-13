@@ -20,10 +20,9 @@ export default class Todos {
     Storage.storeData(todos);
   };
 
-  // static removeTodo(todoId) {
-  //   this.todos = Storage.getData('todos');
-  //   this.todos = this.todos.filter((todo) => todo.id !== todoId);
-  //   Storage.storeData(this.todos);
-  //   displayUI();
-  // }
+  static removeTodo(todoId) {
+    this.todos = Storage.getData('todos');
+    this.todos = this.todos.filter((todo) => todo.id !== todoId);
+    Storage.storeData(this.todos);
+  }
 }

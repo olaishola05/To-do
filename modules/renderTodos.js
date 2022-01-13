@@ -1,8 +1,5 @@
 import Storage from './storage.js';
 
-// Storage.storeData(tasks);
-
-const todos = document.querySelector('.todo-container');
 const renderTodos = (todos) => {
   todos = Storage.getData('todos');
   let render = '';
@@ -12,8 +9,9 @@ const renderTodos = (todos) => {
 
   todos.forEach((todo) => {
     render += `<li>
-                    <div><input type="checkbox" name="check" id="${todo.id}" /> <span contenteditable="false">${todo.description}</span></div>
-                    <i class="fas fa-ellipsis-v"></i>
+                    <div><input type="checkbox" name="check" id="${todo.id}" /> <span>${todo.description}</span></div>
+                    <i class="fas fa-ellipsis-v dots"></i>
+                    <i class="far fa-trash-alt trash"></i>
                   </li>`;
   });
 
@@ -44,11 +42,4 @@ const displayUI = () => {
   return view;
 };
 
-const refreshUI = () => {
-  const getData = Storage.getData();
-  if (getData.length > 0) {
-    console.log('it touch me');
-  }
-};
-
-export { displayUI, refreshUI, renderTodos };
+export { displayUI, renderTodos };
