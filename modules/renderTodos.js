@@ -8,11 +8,20 @@ const renderTodos = (todos) => {
   }
 
   todos.forEach((todo) => {
-    render += `<li>
-                    <div><input type="checkbox" name="check" id="${todo.id}" /> <span>${todo.description}</span></div>
-                    <i class="fas fa-ellipsis-v dots"></i>
-                    <i class="far fa-trash-alt trash"></i>
+    if (!todo.completed) {
+      render += `<li id="${todo.id}">
+                  <div><input type="checkbox" name="check" id="${todo.id}" /> <span>${todo.description}</span></div>
+                    <span><i class="fas fa-ellipsis-v dots cursorC"></i>
+                    <i class="far fa-trash-alt trash cursorC"></i></span>
                   </li>`;
+    } else {
+      render += `<li id="${todo.id}">
+        <div><input type="checkbox" name="check" id="${todo.id}" checked/> 
+        <span class="completed">${todo.description}</span></div>
+          <span><i class="fas fa-ellipsis-v dots cursorC"></i>
+          <i class="far fa-trash-alt trash cursorC"></i></span>
+        </li>`;
+    }
   });
 
   return render;
@@ -32,13 +41,11 @@ const displayUI = () => {
                 <ul class="todos">
                 ${renderTodos()}
                 </ul>
-                <div class="clear">
+                <div class="clear cursorC">
                   <p id="clear">Clear all completed</p>
                 </div>
               </div>
             </div>`;
-
-  // todos.innerHTML = view;
   return view;
 };
 

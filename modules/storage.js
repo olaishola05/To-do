@@ -4,6 +4,6 @@ export default class Storage {
   }
 
   static getData() {
-    return JSON.parse(localStorage.getItem('todos'));
+    return localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
   }
 }

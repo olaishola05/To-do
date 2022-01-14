@@ -1,15 +1,12 @@
 import Storage from './storage.js';
-import todoUI from './todos.js';
-import { displayUI, refreshUI, renderTodos } from './renderTodos.js';
+import { renderTodos } from './renderTodos.js';
 
 export default class Todos {
-  constructor(description, id, completed) {
-    this.description = description;
-    this.id = id;
-    this.completed = completed;
+  constructor(listContainer) {
+    this.listContainer = listContainer;
   }
 
-  static setTodos = (description, completed = false) => {
+  setTodos = (description, completed = false) => {
     const todos = Storage.getData();
     const id = todos.length + 1;
     todos.push({
@@ -18,11 +15,30 @@ export default class Todos {
       id,
     });
     Storage.storeData(todos);
+    Todos.refreshPage(this.listContainer);
   };
 
-  static removeTodo(todoId) {
-    this.todos = Storage.getData('todos');
-    this.todos = this.todos.filter((todo) => todo.id !== todoId);
-    Storage.storeData(this.todos);
+  static refreshPage = (listContainer) => {
+    const myDisplay = renderTodos();
+    listContainer.innerHTML = myDisplay;
+  };
+
+  static removeTodo(todoId, clear = false) {
+    let todos = Storage.getData('todos');
+    if (!clear) {
+      todos = todos.filter((todo) => todo.id !== Number(todoId));
+    } else {
+      todos = todos.filter((todo) => todo.completed !== true);
+    }
+    Todos.updateToDoItemId(todos);
   }
+
+  static updateToDoItemId = (todoList) => {
+    let i = 0;
+    const { length } = todoList;
+    for (i; i < length; i += 1) {
+      todoList[i].index = i + 1;
+    }
+    Storage.storeData(todoList);
+  };
 }

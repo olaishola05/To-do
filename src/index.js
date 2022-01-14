@@ -1,60 +1,51 @@
 import _ from 'lodash';
-import Storage from '../modules/storage.js';
 import './style.css';
 import todoUI from '../modules/todos.js';
 import Todos from '../modules/todosClass.js';
+import Methods from '../modules/methods.js';
+import { markCompleted, clearCompleted } from '../modules/Completed.js';
 
-if (JSON.parse(localStorage.getItem('todos')) === null) {
-  localStorage.setItem('todos', JSON.stringify([]));
-}
+todoUI();
+const listsContainer = document.querySelector('.todos');
+const input = document.querySelector('#add-todo');
+const formBtn = document.querySelector('.form-btn');
+const todoContainer = document.querySelector('.todos');
+const clearCompletedElement = document.querySelector('#clear');
+
+const methods = new Methods([], false, todoContainer);
+const addList = new Todos(todoContainer);
 
 function component() {
   const element = document.createElement('div');
   element.innerHTML = _;
-
   return element;
 }
 
-todoUI();
-// window.onload = displayUI();
-
-const input = document.querySelector('#add-todo');
-
 const addTodo = () => {
   if (input.value !== '') {
-    Todos.setTodos(input.value);
-    window.location.reload();
+    addList.setTodos(input.value);
     input.value = '';
+    window.location.reload();
   }
 };
-const elipse = document.querySelectorAll('.dots');
-const trash = document.querySelectorAll('.trash');
-const span = document.querySelectorAll('span');
-const listsContainer = document.querySelector('.todos');
-
-// for (let i = 0; elipse.length; i += 1) {
-//   elipse[i].addEventListener('click', (e) => {
-//     e.target.display = 'none';
-//     elipse[i].style.display = 'none';
-//     trash[i].style.display = 'block';
-//     // span[i].contenteditable = true;
-//     if (e.target.contenteditable === false) {
-//       e.target.contenteditable = true;
-//     }
-//   });
-// }
 
 listsContainer.addEventListener('click', (e) => {
-  const storedData = Storage.getData();
-  // console.log(storedData);
-  if (e.target.tagName === 'SPAN') {
-    e.target.setAttribute('contenteditable', true);
-    const UpdateDescription = e.target.textContent;
-    // Todos.setTodos(UpdateDescription);
+  const getItemTagName = e.target.tagName;
+  if (getItemTagName === 'LI') {
+    const li = e.target;
+    const id = e.target.id;
+    methods.markListForChange(li, id);
+  } else if (e.target.tagName === 'INPUT') {
+    const checkbox = e.target;
+    const { id } = e.target;
+    markCompleted(checkbox, id, listsContainer);
   }
 });
 
-const formBtn = document.querySelector('.form-btn');
+clearCompletedElement.addEventListener('click', () => {
+  clearCompleted(listsContainer);
+});
+
 formBtn.addEventListener('click', addTodo);
 
 document.body.appendChild(component());
