@@ -1,4 +1,4 @@
-import displayUI from './renderTodos.js';
+import { displayUI } from './renderTodos.js';
 
 const todos = document.querySelector('.todo-container');
 
