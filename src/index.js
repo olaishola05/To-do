@@ -44,6 +44,7 @@ listsContainer.addEventListener('click', (e) => {
 
 clearCompletedElement.addEventListener('click', () => {
   clearCompleted(listsContainer);
+  window.location.reload();
 });
 
 formBtn.addEventListener('click', addTodo);
