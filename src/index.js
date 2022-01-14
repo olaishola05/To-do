@@ -33,7 +33,7 @@ listsContainer.addEventListener('click', (e) => {
   const getItemTagName = e.target.tagName;
   if (getItemTagName === 'LI') {
     const li = e.target;
-    const id = e.target.id;
+    const { id } = e.target;
     methods.markListForChange(li, id);
   } else if (e.target.tagName === 'INPUT') {
     const checkbox = e.target;
