@@ -4,7 +4,7 @@
 
 ![Todos](./asset/resource/todos.png)
 
-A web application for managing daily tasks to be completed with functionality to add, remove and edit tasks using a minimalistic design.
+A simple to-do app for managing daily tasks built with Webpack, JavaScript, HTML, and CSS. With the functionality to add, edit, remove, delete multiple completed tasks and save on localstorage using a minimalistic design.
 
 ## Built With
 
