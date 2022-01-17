@@ -188,3 +188,14 @@ li div {
 #clear:hover {
   color: var(--text);
 }
+
+@media only screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    max-height: 20%;
+  }
+
+  .todo-container {
+    width: 95%;
+  }
+}
