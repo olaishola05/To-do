@@ -16,7 +16,7 @@ A simple to-do app for managing daily tasks built with Webpack, JavaScript, HTML
 
 ## Visit Awesome Books page
 
-[Live Here](coming soon)
+[Live Here](https://netman5.github.io/To-do/)
 
 ## Getting Started
 
