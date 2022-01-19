@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import './style.css';
-import todoUI from '../modules/todos.js';
-import Todos from '../modules/todosClass.js';
-import Methods from '../modules/methods.js';
-import { markCompleted, clearCompleted } from '../modules/Completed.js';
+import todoUI from './modules/todos.js';
+import Todos from './modules/todosClass.js';
+import Methods from './modules/methods.js';
+import { markCompleted, clearCompleted } from './modules/Completed.js';
 
 todoUI();
 const listsContainer = document.querySelector('.todos');
@@ -42,9 +42,12 @@ listsContainer.addEventListener('click', (e) => {
   }
 });
 
-clearCompletedElement.addEventListener('click', () => {
-  clearCompleted(listsContainer);
-  window.location.reload();
+clearCompletedElement.addEventListener('click', (e) => {
+  if (!clearCompleted(listsContainer)) {
+    e.preventDefault();
+  } else {
+    clearCompleted(listsContainer);
+  }
 });
 
 formBtn.addEventListener('click', addTodo);

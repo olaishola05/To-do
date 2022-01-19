@@ -1,8 +1,7 @@
 import { displayUI } from './renderTodos.js';
 
-const todos = document.querySelector('.todo-container');
-
 const todoUI = () => {
+  const todos = document.querySelector('.todo-container');
   todos.innerHTML = displayUI();
 };
 
