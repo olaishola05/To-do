@@ -4,12 +4,17 @@
   "description": "A To-do app that helps to organize your day.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --env=jsdom --coverage",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,7 +28,10 @@
   },
   "homepage": "https://github.com/netman5/To-do",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "@babel/preset-env": "^7.16.10",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.4.6",
     "css-loader": "^6.5.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -40,6 +48,7 @@
     "webpack-dev-server": "^4.7.2"
   },
   "dependencies": {
+    "jest": "^27.4.7",
     "lodash": "^4.17.21"
   }
 }

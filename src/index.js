@@ -53,3 +53,5 @@ clearCompletedElement.addEventListener('click', (e) => {
 formBtn.addEventListener('click', addTodo);
 
 document.body.appendChild(component());
+
+module.exports = addTodo;

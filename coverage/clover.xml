@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1642961265431" clover="3.2.0">
+  <project timestamp="1642961265431" name="All files">
+    <metrics statements="36" coveredstatements="31" conditionals="10" coveredconditionals="6" methods="12" coveredmethods="10" elements="58" coveredelements="47" complexity="0" loc="36" ncloc="36" packages="1" files="3" classes="3"/>
+    <file name="renderTodos.js" path="/home/olaish/Microverse/todo/src/modules/renderTodos.js">
+      <metrics statements="13" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="2"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="5" count="3" type="stmt"/>
+      <line num="6" count="3" type="cond" truecount="1" falsecount="1"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="11" count="6" type="cond" truecount="1" falsecount="1"/>
+      <line num="12" count="6" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="27" count="3" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+    </file>
+    <file name="storage.js" path="/home/olaish/Microverse/todo/src/modules/storage.js">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="7" count="7" type="cond" truecount="2" falsecount="0"/>
+    </file>
+    <file name="todosClass.js" path="/home/olaish/Microverse/todo/src/modules/todosClass.js">
+      <metrics statements="21" coveredstatements="20" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="6"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="3" type="stmt"/>
+      <line num="23" count="3" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="40" count="2" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
